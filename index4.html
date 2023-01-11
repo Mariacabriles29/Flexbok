@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos practicos Flexbox</title>
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /*las etiquetas main, no requieren convertirse en una clase, con el flex grow el main va 
+        a aprovechar el espacio que queda y asi el footer se va alinear a la parte de abajo */
+      main {
+        flex-grow: 1;
+      }
+      .titulares {
+        padding: 1rem;
+        background-color: #222;
+        color: #eee;
+      }
+      /*En version movil para que la cabecera comience en forma de columna */
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu ul {
+        list-style: type none;
+      }
+      /* Agrego un padding para separar cada seccion ontenida en la lsita li */
+      .menu li {
+        padding: 0.5rem;
+      }
+      @media screen and (min-width: 1024px) {
+        .header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+      .hero-image {
+        min-height: 100vh;
+        background-image: url(https://placeimg.com/1280/720/animals);
+        background-repeat: no-repeat;
+        color: white;
+      }
+      .hero-image div {
+        min-height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(black, black, black, 75);
+      }
+      .hero-image h1 {
+        font-size: 5vw;
+      }
+      /* .menu ul {
+        display: flex;
+      } */
+      /*Para emplear un Sticky footer,se le aplica al ody un flexbox en columna  */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="titulares header">
+      <div class="logo">Logo</div>
+
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Sección 1</a></li>
+          <li><a href="#">Sección 2</a></li>
+          <li><a href="#">Sección 3</a></li>
+          <li><a href="#">Sección 4</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Contenido</h2>
+
+      <article class="hero-image">
+        <div>
+          <h1>Flexbox is fuckin COOL</h1>
+        </div>
+      </article>
+    </main>
+    <footer class="titulares">
+      <h2>Sticky Footer</h2>
+    </footer>
+  </body>
+</html>

@@ -34,14 +34,34 @@
         list-style: type none;
       }
       /* Agrego un padding para separar cada seccion ontenida en la lsita li */
-      .menu li {
-        padding: 0.5rem;
-      }
+
       @media screen and (min-width: 1024px) {
         .header {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+        }
+        .menu ul {
+          display: flex;
+        }
+        .menu li {
+          padding: 5rem;
+        }
+        /* Separo el texto de las imagenes, del container */
+        .flex-container {
+          display: flex;
+          align-items: center;
+        }
+
+        .flex-item {
+          flex: 0 0 50%;
+        }
+        /* cambia el orden de las imagenes */
+        .flex-order-1 {
+          order: 1;
+        }
+        .flex-row-reverse {
+          flex-direction: row-reverse;
         }
       }
       .hero-image {
@@ -61,14 +81,24 @@
       .hero-image h1 {
         font-size: 5vw;
       }
-      /* .menu ul {
+      .flex-responsive {
         display: flex;
-      } */
+        flex-flow: row wrap;
+      }
+      .flex-responsive-item {
+        flex: 1 1 200px;
+        border: thin solid orange;
+      }
+
       /*Para emplear un Sticky footer,se le aplica al ody un flexbox en columna  */
       body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </head>
@@ -93,7 +123,7 @@
           <h1>Flexbox is fuckin COOL</h1>
         </div>
       </article>
-      <section class="flex-container">
+      <section class="flex-container flex-row-reverse">
         <article class="flex-item">
           <h2>Titulo</h2>
           <p>
@@ -120,6 +150,31 @@
         <article class="flex-item">
           <img src="https://placeimg.com/400/400/arch" />
         </article>
+      </section>
+      <section>
+        <h2>Responsive sin Media Queries con Flexbox</h2>
+      </section>
+
+      <section class="flex-responsive">
+        <article class="flex-responsive-item">item Responsive 1</article>
+        <article class="flex-responsive-item">item Responsive 2</article>
+        <article class="flex-responsive-item">item Responsive 3</article>
+        <article class="flex-responsive-item">item Responsive 4</article>
+        <article class="flex-responsive-item">item Responsive 5</article>
+        <article class="flex-responsive-item">item Responsive 6</article>
+        <article class="flex-responsive-item">item Responsive 7</article>
+        <article class="flex-responsive-item">item Responsive 8</article>
+        <article class="flex-responsive-item">item Responsive 9</article>
+        <article class="flex-responsive-item">item Responsive 10</article>
+        <article class="flex-responsive-item">item Responsive 11</article>
+        <article class="flex-responsive-item">item Responsive 12</article>
+        <article class="flex-responsive-item">item Responsive 13</article>
+        <article class="flex-responsive-item">item Responsive 14</article>
+        <article class="flex-responsive-item">item Responsive 15</article>
+        <article class="flex-responsive-item">item Responsive 16</article>
+        <article class="flex-responsive-item">item Responsive 17</article>
+        <article class="flex-responsive-item">item Responsive 18</article>
+        <article class="flex-responsive-item">item Responsive 19</article>
       </section>
     </main>
     <footer class="titulares">
